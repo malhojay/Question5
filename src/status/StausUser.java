@@ -9,26 +9,26 @@ package status;
  * MidTerm-Exam
  * @author srinivsi
  */
-public class StausUser 
-{
-   public void statusDetail(String code)
-{
-switch(code.toUpperCase())
-        {
-        case "ZERO": System.out.println("REJECTED");
-        break;
-        case "ONE": System.out.println("PENDING");
-        break;
-        case "TWO":
-        System.out.println("PROCESSING");
-        break;
-        case "THREE": 
-            System.out.println("APPROVED");
-        break;
-        default:
-         System.out.println("NOT VALID CODE");
-        break;
+class StausUser {
+    public void statusDetail(String code) {
+        UserStatus status = null;
+        switch (code.toUpperCase()) {
+            default:
+                System.out.println("NOT VALID CODE");
+                return;
+            case "ONE":
+                status = UserStatus.PENDING;
+                break;
+            case "TWO":
+                status = UserStatus.PROCESSING;
+                break;
+            case "THREE":
+                status = UserStatus.APPROVED;
+                break;
+            case "ZERO":
+                status = UserStatus.REJECTED;
+                break;
         }
-}
- 
+        System.out.println(status);
+    }
 }
